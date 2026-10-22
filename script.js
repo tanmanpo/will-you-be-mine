@@ -1,10 +1,10 @@
 const yesButton = document.getElementById("yes");
+const noButton = document.getElementById("no");
 const message = document.getElementById("message");
 
 yesButton.addEventListener("click", function () {
   message.textContent = "Yay! I knew it! 💖";
 });
-const noButton = document.getElementById("no");
 
 function moveNoButton() {
   const maxX = window.innerWidth - noButton.offsetWidth;
