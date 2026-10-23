@@ -28,6 +28,24 @@ button {
   background-color: #e64980;
   color: white;
 }
+.heart {
+  position: fixed;
+  top: -50px;
+  animation-name: fall;
+  animation-timing-function: linear;
+  pointer-events: none;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(110vh) rotate(360deg);
+  }
+}
+
+#message {
+  font-size: 1.3rem;
+  color: #d6336c;
+}
 
 #no {
   background-color: #868e96;
