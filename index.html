@@ -1,15 +1,56 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Will You Be Mine?</title>
-  <link rel="stylesheet" href="style.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;1,9..144,400&family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css?v=3">
 </head>
 <body>
-  <h1>Will you be mine? 💖</h1>
-  <button id="yes">Yes</button>
-  <button id="no">No</button>
-    <p id="message"></p>
-<script src="script.js?v=2"></script>
+  <div class="sky" id="sky" aria-hidden="true"></div>
+  <canvas id="confetti" aria-hidden="true"></canvas>
+
+  <main>
+    <!-- Stage 1: ask for her name -->
+    <section id="stage-name" class="stage active">
+      <h1>Before we start</h1>
+      <p class="sub">Who is this for?</p>
+      <input id="name-input" type="text" maxlength="30" placeholder="Type her name" autocomplete="off">
+      <div class="actions">
+        <button id="start" class="btn btn-yes" type="button">Continue</button>
+      </div>
+    </section>
+
+    <!-- Stage 2: the question -->
+    <section id="stage-ask" class="stage">
+      <h1 id="question">Will you be mine?</h1>
+      <div class="actions">
+        <button id="yes" class="btn btn-yes" type="button">Yes</button>
+        <button id="no" class="btn btn-no" type="button">No</button>
+      </div>
+      <p id="taunt" class="sub" aria-live="polite">Take your time.</p>
+      <p id="count" class="small"></p>
+    </section>
+
+    <!-- Stage 3: she said yes -->
+    <section id="stage-yes" class="stage">
+      <h1 id="win-title">You said yes.</h1>
+      <article class="paper">
+        <p id="letter"></p>
+        <p id="signature" class="signature hidden"></p>
+      </article>
+      <p id="days" class="sub hidden"></p>
+      <div class="actions">
+        <button id="replay" class="btn btn-ghost hidden" type="button">Play again</button>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js?v=3"></script>
 </body>
 </html>
